@@ -4,8 +4,8 @@ import 'package:power_file_view/src/constant/enums.dart';
 class DownloadUtil {
   static Dio _dio() {
     final BaseOptions options = BaseOptions(
-      connectTimeout: 30 * 1000,
-      receiveTimeout: 60 * 1000,
+      connectTimeout: const Duration(milliseconds: 30 * 1000),
+      receiveTimeout: const Duration(milliseconds: 60 * 1000),
     );
     return Dio(options);
   }
