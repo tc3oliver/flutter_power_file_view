@@ -37,7 +37,7 @@ class PowerFileViewManager {
   ///
   /// 是否展示log
   /// enable：是否展示 flutter的Log
-  /// pluginEnable ：是否展示原生平台的Log
+  /// pluginEnable ：是否展示原生平臺的Log
   static Future<void> initLogEnable(bool log, bool pluginLog) async {
     logEnable = log;
     await _channel.invokeMethod('pluginLogEnable', pluginLog);
@@ -45,7 +45,7 @@ class PowerFileViewManager {
 
   /// Initialize the engine, this method is only valid for the Andorid platform, iOS does not need to call
   ///
-  /// 初始化引擎，此方法只针对Andorid平台有效，iOS无需调用
+  /// 初始化引擎，此方法只針對Andorid平臺有效，iOS無需調用
   static Future<void> initEngine() async {
     if (!Platform.isAndroid) return;
     _channel.setMethodCallHandler(_handler);
@@ -54,7 +54,7 @@ class PowerFileViewManager {
 
   /// Resets the engine state, and then initializes the engine
   ///
-  /// 重置引擎状态，然后初始化引擎
+  /// 重置引擎狀態，然後初始化引擎
   static Future<void> resetEngine() async {
     if (!Platform.isAndroid) return;
     await _channel.invokeMethod<bool?>('resetEngine');
@@ -62,7 +62,7 @@ class PowerFileViewManager {
 
   /// Get the engine status in real time, this method is only valid for Andorid platform, iOS does not need to call
   ///
-  /// 实时获取引擎状态，此方法只针对Andorid平台有效，iOS无需调用
+  /// 實時獲取引擎狀態，此方法只針對Andorid平臺有效，iOS無需調用
   static Future<EngineState?> engineState() async {
     if (Platform.isAndroid) {
       final int? i = await _channel.invokeMethod<int>('getEngineState');
@@ -115,9 +115,9 @@ class PowerFileViewManager {
   /// engineState: the engine state
   /// engineDownloadProgress: the engine download progress
   ///
-  /// 获取原生平台回传的信息
-  /// engineState：引擎状态
-  /// engineDownloadProgress：引擎下载进度
+  /// 獲取原生平臺回傳的信息
+  /// engineState：引擎狀態
+  /// engineDownloadProgress：引擎下載進度
   static Future<void> _handler(MethodCall call) async {
     switch (call.method) {
       case 'engineState':

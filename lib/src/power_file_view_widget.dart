@@ -16,22 +16,22 @@ typedef PowerFileViewErrorBuilder = Widget Function(PowerViewType type);
 class PowerFileViewWidget extends StatefulWidget {
   // file server url
   //
-  // 文件的服务端地址
+  // 文件的服務端地址
   final String? downloadUrl;
 
   // file's local cache path
   //
-  // 文件的本地缓存路径
+  // 文件的本地緩存路徑
   final String filePath;
 
   // If you need to customize Loading UI, you can use this property
   //
-  // 如果你需要自定义Loading, 可以使用此属性
+  // 如果你需要自定義Loading, 可以使用此屬性
   final PowerFileViewLoadingBuilder? loadingBuilder;
 
   // If you need to customize the error, you can use this property
   //
-  // 如果你需要自定义error, 可以使用此属性
+  // 如果你需要自定義error, 可以使用此屬性
   final PowerFileViewErrorBuilder? errorBuilder;
 
   const PowerFileViewWidget({

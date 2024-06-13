@@ -43,6 +43,6 @@ android {
     }
 }
 dependencies {
-    implementation 'com.tencent.tbs:tbssdk:44181'
+    implementation 'com.tencent.tbs:tbssdk:44286'
 //    api fileTree(include: ['*.jar'], dir: 'libs')
 }
